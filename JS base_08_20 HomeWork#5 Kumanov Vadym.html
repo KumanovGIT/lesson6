@@ -1,0 +1,160 @@
+﻿<!-- 
+    1. Создать объект Calculator, который должен содержать методы для расчета суммы, разницы, произведения и деления двух чисел.
+       Протестировать данный объект, принимая от пользователя значения двух операндов и знак операции.
+       В зависимости от принятого знака операции, вызвать соответствующий метод.
+
+    2. Создать массив, который будет хранить в себе информацию о сотрудниках предприятия. Каждый элемент масива — объект, содержащий свойства: name, sName, age, occupation, и метод show, который выводит всю информацию о сотруднике.
+    Реализовать заполнение массива пользователем. По окончанию заполнения — вывести информацию о сотрудниках.
+    
+    3. Для предыдущего задания создайте функцию, которая будет принимать в себя массив объектов-сотрудников, и каждому из объектов будет добавлять новое свойство "salary", хранящее зарплату сотрудника. 
+       Зарплата расчитывается, исходя из значения свойства "occupation" следующим образом:
+           • "director" — 3000;
+           • "manager" — 1500;
+           • "developer" — 2000;
+           • для остальных значений — 1000.
+       После выполнения функции — вывести информацию о сотрудниках.
+          
+     -->
+     <!DOCTYPE html>
+     <html xmlns="http://www.w3.org/1999/xhtml">
+     <head>
+      <title></title>
+      <script >
+// Задание 1
+      var calculator = {
+            sum: function (a, b) {
+                var result = a + b;
+                document.write(result);
+            },
+            subn: function (a, b) {
+                var result = a - b;
+                document.write(result);
+            },
+            mul: function (a, b) {
+                var result = a * b;
+                document.write(result);
+            },
+            div: function (a, b) {
+                var result = a / b;
+                document.write(result);
+            },
+        }
+        var a = +prompt("Введите первое число:");
+        var sign = prompt("Введите операцию:");
+        var b = +prompt("Введите второе число:");
+        if (isNaN(a) || isNaN(b)) {
+            document.write("Вы ввели не число. Проверьте!!");
+            }
+
+        if (sign == "+") {
+            calculator.sum(a, b);
+        } else if (sign == "-") {
+            calculator.sub(a, b);
+        } else if (sign == "*") {
+            calculator.mul(a, b);
+        } else if (sign == "/") {
+            calculator.div(a, b);
+        } else {
+           document.write("Ошибка! Невозможная операция!");
+        }   
+// Задание 2
+      var team = [
+            emp1 = {
+                name: a = prompt("Введите имя:"), 
+                surname: b = prompt("Введите фамилию:"),
+                age: c = prompt("Возраст:"),
+                position: d = prompt("Введите должность:"),
+                show: function() {
+                    console.log("Имя: " + this.name);
+                    console.log("Фамилия: " + this.surname);
+                    console.log("Возраст: " + this.age + " лет");
+                    console.log("Должность: " + this.position);
+                }
+            },
+            emp2 = {
+                name: a = prompt("Введите имя:"), 
+                surname: b = prompt("Введите фамилию:"),
+                age: c = prompt("Возраст:"),
+                position: d = prompt("Введите должность:"),
+                show: function() {
+                    console.log("Имя: " + this.name);
+                    console.log("Фамилия: " + this.surname);
+                    console.log("Возраст: " + this.age + " лет");
+                    console.log("Должность: " + this.position);
+                }
+            },
+            emp3 = {
+                name: a = prompt("Введите имя:"), 
+                surname: b = prompt("Введите фамилию:"),
+                age: c = prompt("Возраст:"),
+                position: d = prompt("Введите должность:"),
+                show: function() {
+                    console.log("Имя: " + this.name);
+                    console.log("Фамилия: " + this.surname);
+                    console.log("Возраст: " + this.age + " лет");
+                    console.log("Должность: " + this.position);
+                }
+            }
+        ]
+        for (var i = 0; i < team.length; i++) {
+            team[i].show();
+        }
+// Задание 3
+      var team = [
+            emp1 = {
+                name: a = prompt("Введите имя:"), 
+                surname: b = prompt("Введите фамилию:"),
+                age: c = prompt("Возраст:"),
+                position: d = prompt("Введите должность:"),
+            },
+            emp2 = {
+                name: a = prompt("Введите имя:"), 
+                surname: b = prompt("Введите фамилию:"),
+                age: c = prompt("Возраст:"),
+                position: d = prompt("Введите должность:"),
+            },
+            emp1 = {
+                name: a = prompt("Введите имя:"), 
+                surname: b = prompt("Введите фамилию:"),
+                age: c = prompt("Возраст:"),
+                position: d = prompt("Введите должность:"),
+            }
+        ]
+        function setSalary(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                switch (arr[i].position) {
+                    case "director":
+                        arr[i].salary = 3000;
+                        break;
+                    case "manager":
+                        arr[i].salary = 1500;
+                        break;
+                    case "developer":
+                        arr[i].salary = 2000;
+                        break;
+                    default:
+                        arr[i].salary = 1000;
+                }
+            }
+        }
+        setSalary(company);
+        for (var i = 0; i < team.length; i++) {
+            console.log("Имя: " + team[i].name);
+            console.log("Фамилия: " + team[i].surname);
+            console.log("Возраст: " + team[i].age + " лет");
+            console.log("Должность: " + team[i].position);
+            console.log("Зарплата: " + team[i].salary);
+        }
+
+
+
+
+
+
+
+      </script>
+
+    </head>
+    <body>
+    </body>
+    </html>
